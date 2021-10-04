@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SaudiExpress.Business\SaudiExpress.Business.csproj" />
+    <ProjectReference Include="..\SaudiExpress.DataBase\SaudiExpress.Database.csproj" />
   </ItemGroup>
 
 </Project>

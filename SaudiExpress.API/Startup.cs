@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SaudiExpress.API.Extensions;
+using SaudiExpress.Database.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,8 @@ namespace SaudiExpress.API
             services.ConfigureSwagger(Environment);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.ConfigureClaimsExtensions();
+            services.AddDataLayerServices(Configuration.GetConnectionString("DefaultConnection"), Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +60,8 @@ namespace SaudiExpress.API
             {
                 endpoints.MapControllers();
             });
+            //TODO:-  Check and Seed the database
+           // DataSeeding.CheckAndSeed(app.ApplicationServices);
         }
     }
 }
