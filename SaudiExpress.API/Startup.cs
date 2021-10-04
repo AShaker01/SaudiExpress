@@ -34,6 +34,7 @@ namespace SaudiExpress.API
             services.ConfigureLogging();
             services.ConfigureSwagger(Environment);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.ConfigureClaimsExtensions();
           
         }
 

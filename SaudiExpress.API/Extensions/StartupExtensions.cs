@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using CompoundPlating.API.Service;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -75,6 +76,11 @@ namespace SaudiExpress.API.Extensions
         public static void ConfigureLogging(this IServiceCollection services)
         {
            //TODO:- Config logging
+        }
+        public static void ConfigureClaimsExtensions(this IServiceCollection services)
+        {
+            services.AddHttpContextAccessor();
+            services.AddScoped<ClaimsPrincipalService>();
         }
         public static void ConfigureSwagger(this IServiceCollection services, IWebHostEnvironment environment)
         {
