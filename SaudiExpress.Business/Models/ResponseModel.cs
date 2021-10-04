@@ -13,7 +13,7 @@
         }
 
         public ResponseStatus Status { get; set; } = ResponseStatus.Succeeded;
-        public string Message { get; }
+        public string Message { get; set; }
     }
     public class ResponseModel<T> : ResponseModel
     {

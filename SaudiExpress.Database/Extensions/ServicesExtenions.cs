@@ -4,12 +4,17 @@ using Microsoft.Extensions.DependencyInjection;
 using SaudiExpress.Database.EntityModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using SaudiExpress.Database.UnitOfWorkRepository;
 
 namespace SaudiExpress.Database.Extensions
 {
     public static class ServicesExtenions
     {
         public static IServiceCollection _services { get; set; }
+        public static void AddRepositoryServices(this IServiceCollection services)
+        {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+        }
         public static void AddDataLayerServices(this IServiceCollection services, string connectionString, IConfiguration configuration)
         {
             _services = services;

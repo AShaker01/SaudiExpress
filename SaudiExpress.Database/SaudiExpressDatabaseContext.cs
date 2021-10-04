@@ -23,5 +23,8 @@ namespace SaudiExpress.Database
         {
             builder.ApplyConfiguration(new AppUserRoleConfiguration());
         }
+        #region Entities
+        public DbSet<ProductEntity> Products { get; set; }
+        #endregion
     }
 }

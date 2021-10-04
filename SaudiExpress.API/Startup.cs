@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SaudiExpress.API.Extensions;
+using SaudiExpress.Business.Extensions;
 using SaudiExpress.Database.Extensions;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,8 @@ namespace SaudiExpress.API
             services.ConfigureSwagger(Environment);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.ConfigureClaimsExtensions();
+            services.AddBusinessLayerServices();
+            services.AddRepositoryServices();
             services.AddDataLayerServices(Configuration.GetConnectionString("DefaultConnection"), Configuration);
 
         }
