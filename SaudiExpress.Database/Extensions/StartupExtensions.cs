@@ -8,7 +8,7 @@ using SaudiExpress.Database.UnitOfWorkRepository;
 
 namespace SaudiExpress.Database.Extensions
 {
-    public static class ServicesExtenions
+    public static class StartupExtensions
     {
         public static IServiceCollection _services { get; set; }
         public static void AddRepositoryServices(this IServiceCollection services)

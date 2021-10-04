@@ -67,8 +67,8 @@ namespace SaudiExpress.API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogCritical(ex, $"Exception has been thrown while getting job results with job id: {jobId}");
-                return StatusCode((int)HttpStatusCode.InternalServerError, $"Exception has been thrown while getting job results with job id: {jobId}");
+                _logger.LogCritical(ex, $"Exception has been thrown while getting User With id: {id}");
+                return StatusCode((int)HttpStatusCode.InternalServerError, $"Exception has been thrown while getting user With id: {id}");
             }
         }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SaudiExpress.Business.Extensions
 {
-    public static class StartupExtension
+    public static class StartupExtensions
     {
         public static void AddBusinessLayerServices(this IServiceCollection services)
         {

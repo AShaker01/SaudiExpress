@@ -22,6 +22,7 @@ namespace SaudiExpress.Database
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new AppUserRoleConfiguration());
+            base.OnModelCreating(builder);
         }
         #region Entities
         public DbSet<ProductEntity> Products { get; set; }

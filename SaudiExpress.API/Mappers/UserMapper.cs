@@ -7,7 +7,9 @@ namespace SaudiExpress.API.Mappers
     {
         public UserMapper()
         {
-            CreateMap<UserDTO, UserViewModel>().ForMember(des => des.FullName, opt => opt.MapFrom(src => $"{src.FirstName} - {src.LastName}"));
+            CreateMap<UserDTO, UserViewModel>()
+                .ForMember(des => des.UserId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(des => des.FullName, opt => opt.MapFrom(src => $"{src.FirstName} - {src.LastName}"));
         }
     }
 }
